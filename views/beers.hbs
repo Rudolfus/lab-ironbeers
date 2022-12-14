@@ -1,10 +1,12 @@
 {{#if beersFromApi}}
-
-  <ul>
+  
+  <ul class="beerUl">
     {{#each beersFromApi}}
-      <li>{{this.name}}<img
-          src={{this.image_url}}
-        />:{{this.description}}:{{this.tagline}}</li>
+      <li><img class="beerImg" src={{this.image_url}}/></li>
+      <li class="beerName">{{this.name}}</li>
+      <li class="beerTagline">{{this.tagline}}</li>      
+      <li class="beerDescip">{{this.description}}</li>
     {{/each}}
   </ul>
+  
 {{/if}}
