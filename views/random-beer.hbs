@@ -1,8 +1,19 @@
 {{#if responseFromApi}}
+<ul class="container">
   {{#each responseFromApi}}
-    {{this.name}}<img
-      src={{this.image_url}}
-    />:{{this.tagline}}:{{this.food_pairing}}:{{this.brewers_tips}}
+    <li><img class="randomImg" src={{this.image_url}}/></li>
+    <div class="container1">
+    <li class="randomName">{{this.name}}</li>    
+    <li class="randomTagline">{{this.tagline}}</li>  
+    <li class="foodPairing">Food pairing<br>
+        <ul>
+           {{#each this.food_pairing}}
+           <li class="foodPairing1">{{this}}</li>
+           {{/each}}
+        </ul>
+    </li>
+    <li class="tips"><span id="tip">Brewers Tips:</span>{{this.brewers_tips}}</li>
+    </div>
   {{/each}}
-
+</ul>
 {{/if}}
